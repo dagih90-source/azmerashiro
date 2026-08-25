@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azmera Shiro — Hayahulet, Addis Ababa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7EFE1;
+    --cream-2:#EFE2CB;
+    --espresso:#241611;
+    --ink:#2A1D16;
+    --berbere:#A3311F;
+    --berbere-dark:#7E2618;
+    --gold:#D9A441;
+    --line: rgba(36,22,17,0.14);
+    --max: 1140px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;font-weight:700;letter-spacing:-0.01em;}
+  p{margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--berbere);outline-offset:3px;border-radius:2px;}
+  @media (prefers-reduced-motion: reduce){*{animation-duration:0.01ms !important;transition-duration:0.01ms !important;}}
+
+  /* ---- injera texture (signature background motif) ---- */
+  .injera-tex{
+    background-image: radial-gradient(rgba(36,22,17,0.05) 1.4px, transparent 1.4px);
+    background-size: 14px 14px;
+  }
+
+  /* ---- woven trim divider (signature motif: Ethiopian textile chevron) ---- */
+  .trim{ height:14px; width:100%;
+    background:
+      linear-gradient(135deg, var(--berbere) 25%, transparent 25%) 0 0/14px 14px,
+      linear-gradient(-135deg, var(--gold) 25%, transparent 25%) 0 0/14px 14px;
+    background-color:var(--espresso);
+  }
+
+  /* ---- NAV ---- */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(247,239,225,0.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.35rem;}
+  .wordmark span{color:var(--berbere);}
+  .nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:0.92rem;font-weight:500;}
+  .nav-links a{text-decoration:none;opacity:0.75;}
+  .nav-links a:hover{opacity:1;}
+  .call-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:var(--berbere);color:var(--cream);text-decoration:none;font-weight:600;font-size:0.9rem;white-space:nowrap;}
+  @media (max-width:760px){.nav-links{display:none;}}
+
+  /* ---- HERO ---- */
+  .hero{padding:64px 0 48px;position:relative;}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
+  @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;}}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.12em;font-size:0.74rem;color:var(--berbere);font-weight:500;}
+  h1.hero-title{font-size:clamp(2.6rem,5.4vw,3.9rem);line-height:1.04;margin-top:14px;color:var(--espresso);}
+  h1.hero-title .accent{color:var(--berbere);}
+  .hero-sub{margin-top:18px;font-size:1.08rem;line-height:1.6;color:rgba(42,29,22,0.82);max-width:480px;}
+  .hero-ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:12px;text-decoration:none;font-weight:600;font-size:0.95rem;border:1.5px solid transparent;transition:transform 0.15s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--berbere);color:var(--cream);}
+  .btn-secondary{background:transparent;border-color:var(--espresso);color:var(--espresso);}
+  .hero-meta{margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;font-size:0.86rem;color:var(--espresso);}
+  .hero-meta strong{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--berbere);margin-bottom:4px;font-weight:500;}
+
+  /* ---- illustrated plate (signature visual, in place of a photo) ---- */
+  .plate-wrap{display:flex;justify-content:center;}
+  .plate-card{background:var(--cream-2);border-radius:24px;padding:22px;border:1px solid var(--line);}
+  .plate-caption{margin-top:14px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--berbere);}
+
+  /* ---- SECTION HEADS ---- */
+  .section{padding:72px 0;}
+  .section-head{max-width:620px;margin:0 auto 44px;text-align:center;}
+  .section-head h2{font-size:clamp(1.9rem,3.6vw,2.5rem);color:var(--espresso);}
+  .section-head p{margin-top:12px;font-size:1rem;color:rgba(42,29,22,0.75);}
+
+  /* ---- SIGNATURE DISH SPOTLIGHT ---- */
+  .spotlight{background:var(--espresso);color:var(--cream);}
+  .spotlight .wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:center;padding:72px 24px;}
+  @media (max-width:860px){.spotlight .wrap{grid-template-columns:1fr;}}
+  .spotlight h2{color:var(--cream);font-size:clamp(1.9rem,3.6vw,2.6rem);}
+  .spotlight .eyebrow{color:var(--gold);}
+  .spotlight p.copy{margin-top:16px;color:rgba(247,239,225,0.8);line-height:1.65;font-size:1.02rem;}
+  .spotlight blockquote{margin-top:22px;font-style:italic;font-size:1.1rem;border-left:3px solid var(--gold);padding-left:16px;color:var(--cream);}
+  .spotlight blockquote span{display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;font-style:normal;color:var(--gold);}
+
+  /* ---- MENU ---- */
+  .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  @media (max-width:700px){.menu-grid{grid-template-columns:1fr;}}
+  .menu-card{background:var(--cream-2);border:1px solid var(--line);border-radius:18px;padding:28px;}
+  .menu-card .tag{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--berbere);font-weight:500;}
+  .menu-card h3{margin-top:10px;font-size:1.4rem;color:var(--espresso);}
+  .menu-card ul{margin:16px 0 0;padding-left:0;list-style:none;font-size:0.94rem;line-height:1.9;color:rgba(42,29,22,0.85);}
+  .menu-card li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:8px 0;}
+  .menu-card li:last-child{border-bottom:none;}
+  .price-note{margin-top:22px;padding:16px 18px;background:rgba(163,49,31,0.08);border-radius:12px;font-size:0.86rem;color:var(--berbere-dark);font-family:'IBM Plex Mono',monospace;}
+
+  /* ---- TESTIMONIALS ---- */
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media (max-width:900px){.test-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.test-grid{grid-template-columns:1fr;}}
+  .test-card{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:24px;position:relative;}
+  .test-card .stars{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:0.85rem;letter-spacing:0.1em;}
+  .test-card p{margin-top:12px;font-size:0.98rem;line-height:1.55;color:var(--ink);}
+  .test-card .who{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:0.78rem;color:var(--berbere);font-weight:600;}
+
+  /* ---- LOCATION ---- */
+  .loc-section .wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;}
+  @media (max-width:860px){.loc-section .wrap{grid-template-columns:1fr;}}
+  .loc-card{background:var(--cream-2);border:1px solid var(--line);border-radius:20px;padding:34px;}
+  .loc-card h3{font-size:1.4rem;color:var(--espresso);}
+  .loc-row{display:flex;gap:14px;margin-top:20px;font-size:0.96rem;}
+  .loc-row strong{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--berbere);margin-bottom:3px;font-weight:500;}
+  .map-card{border-radius:20px;overflow:hidden;position:relative;background:var(--espresso);min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--cream);text-align:center;padding:24px;}
+  .map-card .pin{font-size:2.2rem;}
+  .map-card a{margin-top:16px;display:inline-block;padding:12px 22px;border-radius:999px;background:var(--gold);color:var(--espresso);text-decoration:none;font-weight:700;font-size:0.9rem;}
+
+  /* ---- FINAL CTA ---- */
+  .final-cta{background:var(--berbere);color:var(--cream);text-align:center;padding:64px 24px 72px;}
+  .final-cta h2{font-size:clamp(2rem,4.6vw,2.9rem);max-width:600px;margin:0 auto;}
+  .final-cta p{margin-top:14px;color:rgba(247,239,225,0.85);}
+  .phone-big{display:block;margin-top:28px;font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,6vw,3.2rem);font-weight:700;color:var(--cream);text-decoration:none;letter-spacing:0.01em;}
+  .final-cta .btn-primary{background:var(--cream);color:var(--berbere-dark);margin-top:22px;}
+
+  footer{background:var(--espresso);color:rgba(247,239,225,0.6);padding:30px 24px;text-align:center;font-size:0.82rem;}
+  footer strong{color:var(--cream);}
+
+  /* mobile sticky call bar - conversion booster */
+  .sticky-call{position:fixed;bottom:0;left:0;right:0;background:var(--berbere);color:var(--cream);display:none;align-items:center;justify-content:center;gap:10px;padding:14px;font-weight:700;text-decoration:none;font-size:0.98rem;z-index:60;}
+  @media (max-width:760px){.sticky-call{display:flex;} body{padding-bottom:58px;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="wordmark">Azmera <span>Shiro</span></span>
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+    <a class="call-pill" href="tel:0948448090">📞 Call to reserve</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Hayahulet · Addis Ababa</span>
+      <h1 class="hero-title">The shiro locals<br><span class="accent">quietly swear by.</span></h1>
+      <p class="hero-sub">
+        Rich, smooth, slow-cooked shiro, mahberawi platters built for the table,
+        and a full vegetarian menu every Wednesday and Friday. No frills — just
+        Ethiopian comfort food done properly.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:0948448090">📞 Call: 094 844 8090</a>
+        <a class="btn btn-secondary" href="#menu">View the menu</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>Known for</strong>Shiro &amp; mahberawi</div>
+        <div><strong>Fasting menu</strong>Wed &amp; Fri</div>
+        <div><strong>Typical spend</strong>ETB 600–1,500 / person</div>
+      </div>
+    </div>
+
+    <div class="plate-wrap">
+      <div class="plate-card">
+        <svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="160" cy="160" r="150" fill="#EFE2CB"/>
+          <circle cx="160" cy="160" r="150" fill="none" stroke="#241611" stroke-width="2" opacity="0.15"/>
+          <!-- injera base with bubble texture -->
+          <circle cx="160" cy="160" r="130" fill="#EDD9A8"/>
+          <g fill="#241611" opacity="0.12">
+            <circle cx="120" cy="90" r="3"/><circle cx="150" cy="75" r="2.4"/><circle cx="190" cy="85" r="3.2"/>
+            <circle cx="220" cy="110" r="2.6"/><circle cx="235" cy="150" r="3"/><circle cx="230" cy="195" r="2.4"/>
+            <circle cx="205" cy="230" r="3"/><circle cx="165" cy="245" r="2.6"/><circle cx="120" cy="240" r="3.2"/>
+            <circle cx="90" cy="215" r="2.4"/><circle cx="80" cy="175" r="3"/><circle cx="85" cy="130" r="2.6"/>
+            <circle cx="105" cy="105" r="2.2"/><circle cx="175" cy="100" r="2.2"/><circle cx="205" cy="165" r="2.4"/>
+            <circle cx="180" cy="205" r="2.2"/><circle cx="130" cy="200" r="2.4"/><circle cx="110" cy="160" r="2.2"/>
+          </g>
+          <!-- shiro well -->
+          <circle cx="160" cy="160" r="72" fill="#A3311F"/>
+          <circle cx="160" cy="160" r="72" fill="none" stroke="#7E2618" stroke-width="3"/>
+          <!-- swirl highlight -->
+          <path d="M120,150 Q160,120 200,150 Q170,175 195,195" stroke="#C4543F" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <!-- niter kibbeh pool -->
+          <ellipse cx="160" cy="150" rx="18" ry="10" fill="#D9A441" opacity="0.85"/>
+          <!-- garnish flecks -->
+          <g fill="#D9A441">
+            <circle cx="140" cy="185" r="2.4"/><circle cx="178" cy="190" r="2.2"/><circle cx="160" cy="200" r="2.6"/>
+          </g>
+        </svg>
+        <p class="plate-caption">Signature shiro, served hot</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trim"></div>
+
+<section class="spotlight">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The dish that built the name</span>
+      <h2>Shiro, the way it's meant to be</h2>
+      <p class="copy">
+        Smooth chickpea stew, simmered low and finished with niter kibbeh —
+        it's the dish regulars order on autopilot, paired with mahberawi
+        combo platters for the table.
+      </p>
+    </div>
+    <div>
+      <blockquote>"If you want shiro, you've come to the right place!"<span>Meareg G. Gebremedhin</span></blockquote>
+      <blockquote>"Shiro lover paradise."<span>Maereg Ngusie</span></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">On the table</span>
+      <h2>What to order</h2>
+      <p>The dishes guests come back for, grouped the way you'll actually order them.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <span class="tag">Signature · Every day</span>
+        <h3>Mains</h3>
+        <ul>
+          <li>Shiro <span>House specialty</span></li>
+          <li>Mahberawi platter <span>For the table</span></li>
+          <li>Combo dishes <span>Mixed plate</span></li>
+          <li>Lamb tibs <span>Grilled</span></li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <span class="tag">Wednesdays &amp; Fridays</span>
+        <h3>Fasting &amp; vegetarian</h3>
+        <ul>
+          <li>Full vegetarian menu <span>All day</span></li>
+          <li>Fasting shiro <span>Fan favourite</span></li>
+          <li>Seasonal fasting dishes <span>Rotates</span></li>
+        </ul>
+        <div class="price-note">Guests typically spend ETB 600–1,500 per person, depending on order.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trim"></div>
+
+<section class="section injera-tex" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Straight from Google</span>
+      <h2>What regulars are saying</h2>
+      <p>Real reviews, kept exactly as written.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"Azmera Shiro Hayahulet offers delectable and delightful cuisine. I highly recommend trying their flavorful shiro, as well as their enticing mahberawi and combo dishes. The waitstaff is exceptionally friendly and attentive."</p>
+        <div class="who">Henok K. · Local Guide</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"Very tasty fasting dishes, their shiro is the best. And the service was excellent."</p>
+        <div class="who">Amanuel Tefera · Local Guide</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"It's a great spot for lunch, they have a full vegetarian menu on Wednesdays and Fridays. It's my favorite place when I'm around."</p>
+        <div class="who">Abdulhamid Mhd · Local Guide</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"Shiro and lamb tibs, mouthwatering — this is a very good dining spot."</p>
+        <div class="who">Lijo Abraham Jose · Local Guide</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"I've been here several times – the food is always delicious and the service is very friendly. Highly recommended!"</p>
+        <div class="who">Biniam Daniel</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"Good fasting and non-fasting foods, well known for their tasty shiro wot. Good variety of Ethiopian food."</p>
+        <div class="who">Beminet Teshome · Local Guide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section loc-section" id="location">
+  <div class="wrap">
+    <div class="loc-card">
+      <span class="eyebrow">Find us</span>
+      <h3 style="margin-top:10px;">Hayahulet ("Around 22")</h3>
+      <div class="loc-row"><div><strong>Address</strong>Hayahulet (Around 22), Addis Ababa, Ethiopia</div></div>
+      <div class="loc-row"><div><strong>Phone</strong><a href="tel:0948448090">094 844 8090</a></div></div>
+      <div class="loc-row"><div><strong>Hours</strong>Daily · 7:00 AM – 9:30 PM<br>Full vegetarian &amp; fasting menu Wed &amp; Fri</div></div>
+      <div class="loc-row"><div><strong>Busiest</strong>Lunch, especially during fasting periods — arrive early or call ahead</div></div>
+    </div>
+    <div class="map-card">
+      <div class="pin">📍</div>
+      <p style="max-width:260px;">Hayahulet, Addis Ababa — a short walk from the "22" roundabout.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Azmera+Shiro+Hayahulet+Addis+Ababa" target="_blank" rel="noopener">Get directions →</a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>Hungry? The shiro's ready.</h2>
+  <p>Call ahead for a table, especially at lunch during fasting days.</p>
+  <a class="phone-big" href="tel:0948448090">094 844 8090</a>
+  <div>
+    <a class="btn btn-primary" href="tel:0948448090">📞 Call now</a>
+  </div>
+</section>
+
+<a class="sticky-call" href="tel:0948448090">📞 Call Azmera Shiro now</a>
+
+<footer>
+  <strong>Azmera Shiro</strong> — Hayahulet, Addis Ababa. Menu and reviews shown are drawn from real customer feedback.
+</footer>
+
+</body>
+</html>
