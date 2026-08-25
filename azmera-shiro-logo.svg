@@ -1,0 +1,58 @@
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=IBM+Plex+Mono:wght@500&display=swap');
+    .word { font-family: 'Space Grotesk', Arial, sans-serif; font-weight: 700; }
+    .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; font-weight: 500; }
+  </style>
+
+  <rect width="900" height="400" fill="#F7EFE1"/>
+
+  <!-- ===== Bowl monogram badge ===== -->
+  <g transform="translate(210,200)">
+    <!-- outer disc: espresso -->
+    <circle cx="0" cy="0" r="150" fill="#241611"/>
+
+    <!-- injera bubble-texture ring, matching the site's signature texture -->
+    <g fill="#F7EFE1" opacity="0.55">
+      <circle cx="0"    cy="-132" r="4.2"/>
+      <circle cx="46"   cy="-124" r="3.4"/>
+      <circle cx="88"   cy="-100" r="4.6"/>
+      <circle cx="119"  cy="-66"  r="3.6"/>
+      <circle cx="136"  cy="-24"  r="4.2"/>
+      <circle cx="136"  cy="24"   r="3.6"/>
+      <circle cx="119"  cy="66"   r="4.6"/>
+      <circle cx="88"   cy="100"  r="3.4"/>
+      <circle cx="46"   cy="124"  r="4.2"/>
+      <circle cx="0"    cy="132"  r="3.6"/>
+      <circle cx="-46"  cy="124"  r="4.6"/>
+      <circle cx="-88"  cy="100"  r="3.4"/>
+      <circle cx="-119" cy="66"   r="4.2"/>
+      <circle cx="-136" cy="24"   r="3.6"/>
+      <circle cx="-136" cy="-24"  r="4.6"/>
+      <circle cx="-119" cy="-66"  r="3.4"/>
+      <circle cx="-88"  cy="-100" r="4.2"/>
+      <circle cx="-46"  cy="-124" r="3.6"/>
+    </g>
+
+    <!-- gold ring -->
+    <circle cx="0" cy="0" r="112" fill="none" stroke="#D9A441" stroke-width="4"/>
+
+    <!-- shiro bowl -->
+    <circle cx="0" cy="0" r="96" fill="#EDD9A8"/>
+    <circle cx="0" cy="0" r="66" fill="#A3311F"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#7E2618" stroke-width="3"/>
+    <path d="M-38,-10 Q0,-38 38,-10 Q10,14 34,34" stroke="#C4543F" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <ellipse cx="0" cy="-8" rx="16" ry="9" fill="#D9A441" opacity="0.9"/>
+  </g>
+
+  <!-- ===== Wordmark lockup ===== -->
+  <g transform="translate(470,110)">
+    <text x="0" y="46"  class="word" font-size="66" letter-spacing="1" fill="#241611">AZMERA</text>
+    <text x="0" y="118" class="word" font-size="66" letter-spacing="1" fill="#A3311F">SHIRO</text>
+
+    <!-- thin gold rule -->
+    <rect x="4" y="140" width="270" height="4" fill="#D9A441"/>
+
+    <text x="4" y="176" class="mono" font-size="19" letter-spacing="3.5" fill="#7E2618">HAYAHULET · ADDIS ABABA</text>
+  </g>
+</svg>
